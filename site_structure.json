@@ -1,6 +1,14 @@
 {
   "posts": [
     {
+      "title": "example",
+      "titleImage": "https://da77jsbdz4r05.cloudfront.net/images/ls170/tls-authentication-chain-of-trust.png",
+      "author": "John Doe",
+      "publishedDate": "2021-12-23",
+      "content": "./blog_posts/example.md"
+    },
+
+    {
       "title": "TLS Authentication",
       "titleImage": "https://da77jsbdz4r05.cloudfront.net/images/ls170/tls-authentication-chain-of-trust.png",
       "author": "John Doe",
