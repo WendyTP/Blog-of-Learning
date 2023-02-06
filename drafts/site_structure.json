@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "title": "example",
+      "titleImage": "https://da77jsbdz4r05.cloudfront.net/images/ls170/tls-authentication-chain-of-trust.png",
+      "author": "John Doe",
+      "publishedDate": "2021-12-23",
+      "content": "./blog_posts/example.md"
+    },
+
+    {
+      "title": "TLS Authentication",
+      "titleImage": "https://da77jsbdz4r05.cloudfront.net/images/ls170/tls-authentication-chain-of-trust.png",
+      "author": "John Doe",
+      "publishedDate": "2021-12-23",
+      "content": "./blog_posts/TLS_Authentication.md"
+    },
+
+    {
+      "title": "TLS Encryption",
+      "titleImage": "https://da77jsbdz4r05.cloudfront.net/images/ls170/tls-encryption-symmetric.png",
+      "author": "Jane Adams",
+      "publishedDate": "2022-02-13",
+      "content":"./blog_posts/TLS_Encryption.md"
+    },
+
+    {
+      "title": "TLS Integriry",
+      "titleImage": "https://via.placeholder.com/800x300.jpg",
+      "author": "John Doe",
+      "publishedDate": "2020-10-29",
+      "content": "./blog_posts/TLS_Integriry.md"
+    },
+
+    {
+      "title": "TLS Protocol",
+      "titleImage": "https://via.placeholder.com/800x300.jpg",
+      "author": "Jane Adams",
+      "publishedDate": "2023-01-22",
+      "content": "./blog_posts/TLS_Protocol.md"
+    },
+
+    {
+      "title": "Transmission Control Protocol",
+      "titleImage": "https://da77jsbdz4r05.cloudfront.net/images/ls170/transport-layer-tcp-segment.png",
+      "author": "John Doe",
+      "publishedDate": "2020-03-08",
+      "content": "./blog_posts/Transmission_Control_Protocol.md"
+    },
+
+    {
+      "title": "User Datagram Protocol",
+      "titleImage": "https://da77jsbdz4r05.cloudfront.net/images/ls170/transport-udp-datagram-header.png",
+      "author": "Jane Adams",
+      "publishedDate": "2021-06-24",
+      "content": "./blog_posts/User_Datagram_Protocol.md"
+    }
+
+  ]
+}
