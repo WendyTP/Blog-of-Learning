@@ -3,6 +3,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import BlogHeader from './components/BlogHeader.vue'
 import BlogFooter from './components/BlogFooter.vue'
+import BlogMain from './components/BlogMain.vue'
 </script>
 
 <template>
@@ -10,7 +11,8 @@ import BlogFooter from './components/BlogFooter.vue'
   <BlogHeader />
 
   <main>
-    <TheWelcome />
+   <!--TheWelcome /-->
+   <BlogMain />
   </main>
 
   <BlogFooter />
