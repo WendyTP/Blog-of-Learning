@@ -22,7 +22,7 @@
       <BlogMultiplePosts :postData="allPosts" />
       
       <div class="navBar col-md-4 ">
-        <BlogNavBar />
+        <BlogNavBar :postData="allPosts" />
       </div>
     </div>
   </div>

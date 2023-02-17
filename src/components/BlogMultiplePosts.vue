@@ -9,7 +9,7 @@
 <template>
   <div class="postsContainer col-md-8">
     <article class="blog-post">
-      <h2 class="blog-post-title mb-1">Another blog post</h2>
+      <h2 class="blog-post-title mb-1">Example blog post</h2>
       <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
       <img src="https://via.placeholder.com/800x300.jpg" alt="image of first post" class="img-fluid">
 

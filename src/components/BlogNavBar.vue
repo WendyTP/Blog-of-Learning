@@ -1,4 +1,22 @@
-<script setup></script>
+<script setup>
+  import {computed, ref} from 'vue'
+
+  const props = defineProps({
+    postData: {
+      type: Array,
+      required: false
+    }
+  })
+
+  const maxPostsDispalyAmt = ref(3);
+  
+  const recentPostsSelection = computed(() => {
+    let filteredposts = props.postData .slice().reverse().splice(0, maxPostsDispalyAmt.value);
+    return filteredposts;
+  })
+
+</script>
+
 <template>
    
   <div class="position-sticky" style="top: 2rem;">
@@ -45,6 +63,23 @@
           </div>
         </div>
       </a>
+      <div v-if="props.postData.length > 0">
+        <div v-for="post in recentPostsSelection" :key="post.id">
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="https://via.placeholder.com/800x300.jpg" alt="twbs" width="90" height="70" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">{{post.title}}</h6>
+                <p class="mb-0 opacity-75">{{post.content}}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      
+
+
     </div>
 
     <div class="p-4">
@@ -77,4 +112,8 @@
 
 
 </template>
-<style scoped></style>
+<style scoped>
+  ul {
+    list-style-type: none;
+  }
+</style>
