@@ -1,10 +1,24 @@
 <script setup>
+  import BlogSinglePost from '../components/BlogSinglePost.vue'
+  import {ref} from 'vue'
+
   defineProps({
     postData: {
       type: Array,
       required: true
     }
-})
+  })
+
+  const displayMultiplePosts = ref(true);
+  const chosenPostToDisplay = ref(false);
+
+  function hideMultiplePosts(singlePost) {
+    displayMultiplePosts.value = false;
+    let postsContainer = document.querySelector("div.postsContainer");
+    postsContainer.hidden = true;
+    chosenPostToDisplay.value = singlePost;
+  }
+
 </script>
 <template>
   <div class="postsContainer col-md-8">
@@ -26,19 +40,35 @@
       <p class="blog-post-meta">{{post.publishedDate}} by <a href="#">{{post.author}}</a></p>
       <img src="{{post.titleImage}}" alt="image of first post" class="img-fluid">
 
-      <p>{{post.content}}</p>
+      <p class="truncated">{{post.content}}</p>
+      <p class=" mb-0">
+      <a @click.prevent="hideMultiplePosts(post)" href="#" class="fw-bold">Continue reading...</a>
+      </p>
+      <br/>
     </article>
-
-    
-
-    
 
     <nav class="blog-pagination" aria-label="Pagination">
       <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
       <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
     </nav>
-
   </div>
 
+  <template v-if="Object.keys(chosenPostToDisplay).length !== 0">
+    <div class="col-md-8">
+  
+      <BlogSinglePost :chosenPost="chosenPostToDisplay" />
+    </div>
+  </template>
+
 </template>
-<style scoped></style>
+<style scoped>
+  .truncated {
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+  }
+
+</style>
