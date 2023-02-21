@@ -49,32 +49,23 @@
         <img src="https://via.placeholder.com/800x300.jpg" alt="twbs" width="90" height="70" class="rounded-circle flex-shrink-0">
         <div class="d-flex gap-2 w-100 justify-content-between">
           <div>
-            <h6 class="mb-0">Another title here</h6>
-            <p class="mb-0 opacity-75">Some placeholder content in a paragraph that goes a little longer so it wraps to a new line.</p>
-          </div>
-        </div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-        <img src="https://via.placeholder.com/800x300.jpg" alt="twbs" width="90" height="70" class="rounded-circle flex-shrink-0">
-        <div class="d-flex gap-2 w-100 justify-content-between">
-          <div>
             <h6 class="mb-0">Third heading</h6>
             <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
           </div>
         </div>
       </a>
       <div v-if="props.postData.length > 0">
-        <div v-for="post in recentPostsSelection" :key="post.id">
+        <template v-for="post in recentPostsSelection" :key="post.id">
           <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
             <img src="https://via.placeholder.com/800x300.jpg" alt="twbs" width="90" height="70" class="rounded-circle flex-shrink-0">
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>
                 <h6 class="mb-0">{{post.title}}</h6>
-                <p class="mb-0 opacity-75">{{post.content}}</p>
+                <p class="mb-0 opacity-75">{{post.publishedDate}}</p>
               </div>
             </div>
           </a>
-        </div>
+        </template>
       </div>
 
       

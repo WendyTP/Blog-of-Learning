@@ -11,7 +11,6 @@ import BlogMain from './components/BlogMain.vue'
   <BlogHeader />
 
   <main>
-   <!--TheWelcome /-->
    <BlogMain />
   </main>
 
