@@ -2,18 +2,24 @@
   import {computed, ref} from 'vue'
 
   const props = defineProps({
-    postData: {
+    allPosts: {
       type: Array,
       required: false
     }
   })
 
+  const emit = defineEmits(['submitChosenPost'])
+
   const maxPostsDispalyAmt = ref(3);
   
   const recentPostsSelection = computed(() => {
-    let filteredposts = props.postData .slice().reverse().splice(0, maxPostsDispalyAmt.value);
+    let filteredposts = props.allPosts .slice().reverse().splice(0, maxPostsDispalyAmt.value);
     return filteredposts;
   })
+
+  function anchorclick(chosenPost) {
+    emit("submitChosenPost", chosenPost)
+  }
 
 </script>
 
@@ -54,9 +60,9 @@
           </div>
         </div>
       </a>
-      <div v-if="props.postData.length > 0">
+      <div v-if="props.allPosts.length > 0">
         <template v-for="post in recentPostsSelection" :key="post.id">
-          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+          <a @click.prevent="$emit('anchorclick', post)" href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
             <img src="https://via.placeholder.com/800x300.jpg" alt="twbs" width="90" height="70" class="rounded-circle flex-shrink-0">
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>

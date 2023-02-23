@@ -16,20 +16,20 @@
   const chosenPostToDisplay = ref(false);
 
   function hideMultiplePosts(singlePost) {
+    resetDisplay();
     displayMultiplePosts.value = false;
     let allPosts = document.querySelector("div.allPosts");
     allPosts.hidden = true;
     chosenPostToDisplay.value = singlePost;
-    alert('this is hidden')
+    alert('chosenPostToDisplay.value.id')
   }
 
   function resetDisplay() {
     displayMultiplePosts.value = true;
-    chosenPostToDisplay.value = true;
+    chosenPostToDisplay.value = false;
   }
 
   function displaySinglePost(element) {
-    resetDisplay();
     let postsContainerDiv = document.querySelector("div.postsContainer");
     postsContainerDiv.insertAdjacentElement("afterbegin", element);
   }
