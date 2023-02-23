@@ -1,7 +1,7 @@
 <script setup>
   import BlogFeaturedPost from '../components/BlogFeaturedPost.vue'
   import BlogMultiplePosts from '../components/BlogMultiplePosts.vue'
-  import BlogNavBar from '../components/BlogNavBar.vue'
+  
   import json from '../assets/site_structure.json'
  
   import {ref, onMounted} from 'vue'
@@ -21,9 +21,7 @@
     <div class="row g-5 mb-4">
       <BlogMultiplePosts :postData="allPosts" />
       
-      <div class="navBar col-md-4 ">
-        <BlogNavBar :postData="allPosts" />
-      </div>
+
     </div>
   </div>
 
