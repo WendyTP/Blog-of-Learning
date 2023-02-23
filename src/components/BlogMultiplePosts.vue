@@ -11,36 +11,40 @@
   })
 
 
-
-  const displayMultiplePosts = ref(true);
-  const chosenPostToDisplay = ref(false);
+  const chosenPostToDisplay = ref({});
+  //const displayMultiplePosts = ref(true);
 
   function hideMultiplePosts(singlePost) {
-    resetDisplay();
-    displayMultiplePosts.value = false;
+    //displayMultiplePosts.value = false;
+    chosenPostToDisplay.value = singlePost;
     let allPosts = document.querySelector("div.allPosts");
     allPosts.hidden = true;
-    chosenPostToDisplay.value = singlePost;
-    alert('chosenPostToDisplay.value.id')
   }
 
-  function resetDisplay() {
-    displayMultiplePosts.value = true;
-    chosenPostToDisplay.value = false;
+ 
+
+  function resetDisplaySetting() {
+    // how to display hidden allPosts and hide single post?
+    // where to use?
+    chosenPostToDisplay.value = {};
+     let allPosts = document.querySelector("div.allPosts");
+     let singlePostDiv = document.querySelector("div.singlePost");
+     if (singlePostDiv) {singleDiv.hidden = true};
+     if (allPosts) {allPosts.hidden = false}
+     //displayMultiplePosts.value = true
+     alert('resetting')
   }
 
-  function displaySinglePost(element) {
+  function displaySinglePost(divElement) {
+    alert('single')
+    divElement.hidden = false;
     let postsContainerDiv = document.querySelector("div.postsContainer");
-    postsContainerDiv.insertAdjacentElement("afterbegin", element);
-  }
-
-  function testingAlert(post) {
-    alert('this is done')
+    postsContainerDiv.insertAdjacentElement("afterbegin", divElement);
   }
 
 </script>
 <template>
-  <div class="postsContainer col-md-8">
+  <div :ref="resetDisplaySetting" class="postsContainer col-md-8">
     <div class="allPosts">
       <article class="blog-post">
         <h2 class="blog-post-title mb-1">Example blog post</h2>
@@ -82,7 +86,7 @@
 
   <template v-if="Object.keys(chosenPostToDisplay).length !== 0">
     <div :ref="displaySinglePost" class="singlePost">
-      <BlogSinglePost :chosenPost="chosenPostToDisplay" />
+      <BlogSinglePost  :chosenPost="chosenPostToDisplay" />
     </div>
   </template>
 

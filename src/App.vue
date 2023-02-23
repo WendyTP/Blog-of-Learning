@@ -1,20 +1,30 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import BlogHeader from './components/BlogHeader.vue'
-import BlogFooter from './components/BlogFooter.vue'
-import BlogMain from './components/BlogMain.vue'
+import homePage from './components/homePage.vue'
+import { ref, computed } from 'vue'
+
+
+const routes = {
+  '/': homePage,
+}
+
+const currentPath = ref(window.location.hash)
+
+window.addEventListener('hashchange', () => {
+  currentPath.value = window.location.hash
+})
+
+const currentView = computed(() => {
+  return routes[currentPath.value.slice(1) || '/'] || NotFound
+})
+
+
+
+
 </script>
 
 <template>
  
-  <BlogHeader />
-
-  <main>
-   <BlogMain />
-  </main>
-
-  <BlogFooter />
+  <component :is="currentView" />
 </template>
 
 <style scoped>
