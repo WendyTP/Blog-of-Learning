@@ -29,7 +29,7 @@
     chosenPostToDisplay.value = {};
      let allPosts = document.querySelector("div.allPosts");
      let singlePostDiv = document.querySelector("div.singlePost");
-     if (singlePostDiv) {singleDiv.hidden = true};
+     //if (singlePostDiv) {singlePostDiv.hidden = true};
      if (allPosts) {allPosts.hidden = false}
      //displayMultiplePosts.value = true
      alert('resetting')
@@ -44,7 +44,7 @@
 
 </script>
 <template>
-  <div :ref="resetDisplaySetting" class="postsContainer col-md-8">
+  <div  class="postsContainer col-md-8">
     <div class="allPosts">
       <article class="blog-post">
         <h2 class="blog-post-title mb-1">Example blog post</h2>
