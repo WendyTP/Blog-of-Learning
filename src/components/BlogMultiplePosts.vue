@@ -32,14 +32,17 @@
      //if (singlePostDiv) {singlePostDiv.hidden = true};
      if (allPosts) {allPosts.hidden = false}
      //displayMultiplePosts.value = true
-     alert('resetting')
+     //alert('resetting')
   }
 
   function displaySinglePost(divElement) {
-    alert('single')
-    divElement.hidden = false;
-    let postsContainerDiv = document.querySelector("div.postsContainer");
-    postsContainerDiv.insertAdjacentElement("afterbegin", divElement);
+    //alert('single')
+    if (divElement) {
+      divElement.hidden = false;
+      let postsContainerDiv = document.querySelector("div.postsContainer");
+      postsContainerDiv.insertAdjacentElement("afterbegin", divElement);
+    }
+  
   }
 
 </script>

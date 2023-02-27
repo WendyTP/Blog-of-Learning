@@ -16,9 +16,13 @@
               <span class="fs-4">Head Space</span>
             </a>
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-              <li class="nav-item"><a @click="$emit('homeclick')" href="#/" class="nav-link active" aria-current="page">Home</a></li>
+              <li class="nav-item">
+                <router-link to="/"  @click="$emit('homeclick')" class="nav-link active" aria-current="page">Home</router-link>
+              </li>
               <li class="nav-item"><a href="#" class="nav-link text-white">About me</a></li>
-              <li class="nav-item"><a href="#" class="nav-link text-white">Blog</a></li>
+              <li class="nav-item">
+                <router-link to="/newPost" class="nav-link text-white">Add Blog</router-link>
+              </li>
               <li class="nav-item"><a href="#" class="nav-link text-white">Projects</a></li>
               <li class="nav-item"><a href="#" class="nav-link text-white">Contact</a></li>
             </ul>

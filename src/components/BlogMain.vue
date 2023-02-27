@@ -14,21 +14,19 @@
 </script>
 
 <template>
+  <main>
 
-  <BlogFeaturedPost />
- 
+    <BlogFeaturedPost />
+  
 
-  <div class="container">
-    <div class="row g-5 mb-4">
-      <BlogMultiplePosts :postData="allPosts" />
-      
-
+    <div class="container">
+      <div class="row g-5 mb-4">
+        <BlogMultiplePosts :postData="allPosts" />
+      </div>
     </div>
-  </div>
+    
+  </main>
 
-  
-
-  
   
 
 </template>
