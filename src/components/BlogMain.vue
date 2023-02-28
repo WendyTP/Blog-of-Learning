@@ -1,12 +1,12 @@
 <script setup>
   import BlogFeaturedPost from '../components/BlogFeaturedPost.vue'
   import BlogMultiplePosts from '../components/BlogMultiplePosts.vue'
+  import BlogNavBar from '../components/BlogNavBar.vue'
   
   import json from '../assets/site_structure.json'
  
-  import {ref, onMounted} from 'vue'
+  import {ref} from 'vue'
 
-  const count = ref(0)
   const allPosts = ref(json.posts)
 
   
@@ -14,18 +14,23 @@
 </script>
 
 <template>
-  <main>
-
-    <BlogFeaturedPost />
   
 
-    <div class="container">
-      <div class="row g-5 mb-4">
-        <BlogMultiplePosts :postData="allPosts" />
-      </div>
+  <BlogFeaturedPost />
+  
+
+  <div class="container">
+    <div class="row g-5 mb-4">
+
+      <BlogMultiplePosts :postData="allPosts" />
+      
+      <BlogNavBar :postData="allPosts" @anchorclick="hideMultiplePosts"/>
     </div>
+  </div>
+
+ 
     
-  </main>
+
 
   
 
