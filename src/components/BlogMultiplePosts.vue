@@ -1,6 +1,5 @@
 <script setup>
-  import BlogSinglePost from '../components/BlogSinglePost.vue'
-  import BlogNavBar from '../components/BlogNavBar.vue'
+  
   import {ref, onMounted} from 'vue'
 
   const props = defineProps({
@@ -9,6 +8,10 @@
       required: true
     }
   })
+
+  const lastPost = ref(props.postData[6])
+
+
 
 
   const chosenPostToDisplay = ref({});
@@ -45,10 +48,19 @@
   
   }
 
+  function displayAllPosts(divElement) {
+    let postsContainerDiv = document.querySelector("div.postsContainer");
+    if (postsContainerDiv) {
+      postsContainerDiv.replaceChildren();
+      postsContainerDiv.insertAdjacentElement("afterbegin", divElement);
+    }
+
+  }
+
 </script>
 <template>
   <div  class="postsContainer col-md-8">
-    <div class="allPosts">
+    <div :ref="displayAllPosts"  class="allPosts">
       <article class="blog-post">
         <h2 class="blog-post-title mb-1">Example blog post</h2>
         <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
@@ -62,7 +74,21 @@
         <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
       </article>
 
-      <article class="blog-post" v-for="post in postData" :key="post.id">
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">{{lastPost.title}}</h2>
+        <p class="blog-post-meta">{{lastPost.publishedDate}} by <a href="#">{{lastPost.author}}</a></p>
+        <img src="{{lastPost.titleImage}}" alt="image of first post" class="img-fluid">
+
+        <p class="truncated">{{lastPost.content}}</p>
+        <p class=" mb-0">
+        <router-link @click.prevent="hideMultiplePosts(lastPost)" :to="lastPost.slug" class="fw-bold">Continue reading...</router-link>
+        </p>
+        <br/>
+
+       
+      </article>
+
+      <article class="blog-post" v-for="post in props.postData" :key="post.id">
         <h2 class="blog-post-title mb-1">{{post.title}}</h2>
         <p class="blog-post-meta">{{post.publishedDate}} by <a href="#">{{post.author}}</a></p>
         <img src="{{post.titleImage}}" alt="image of first post" class="img-fluid">
@@ -81,9 +107,7 @@
     </div>
   </div>
 
-   <div class="navBar col-md-4 ">
-    <BlogNavBar :allPosts="props.postData" @anchorclick="hideMultiplePosts"/>
-  </div>
+
   
 
 

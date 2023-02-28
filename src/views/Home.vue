@@ -1,8 +1,8 @@
 <script setup>
-import BlogHeader from '../components/BlogHeader.vue'
-import BlogFooter from '../components/BlogFooter.vue'
+
+
 import BlogMain from '../components/BlogMain.vue'
-import CreateBlogPost from './CreateBlogPost.vue'
+
 
 function refreshBlogMain() {
   
@@ -15,14 +15,9 @@ function refreshBlogMain() {
 </script>
 
 <template>
-  <BlogHeader @homeclick="refreshBlogMain"/>
 
-  
    <BlogMain />
-   <!--CreateBlogPost /-->
-  
 
-  <BlogFooter />
 </template>
 
 <style scoped>

@@ -7,7 +7,6 @@
   const titleText = ref('');
 </script>
 <template>
-  <main>
     <div class="container">
       <div class="form-post w-100 m-auto">
         <form class="form-post" action="" method="">
@@ -47,7 +46,6 @@
         <p style="white-space: pre-line;">{{contentText}}</p>
       </div>
     </div>
-  </main>
 </template>
 <style scoped>
   main {
@@ -59,8 +57,11 @@
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #0dcaf0;
+  
 }
+  .container {
+     background-color: #0dcaf0;
+  }
 
   .form-post {
     max-width: 600px;
