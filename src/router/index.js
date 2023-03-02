@@ -7,7 +7,7 @@ import CreateBlogPost from '@/views/CreateBlogPost.vue'
 const routes = [
   {path: "/", name: "Home", component: Home},
   {path: '/newPost', name: 'CreateBlogPost', component: CreateBlogPost},
-  {path: "/posts/7", name: 'LastPost', component: () => import('@/views/LastPost.vue')},  // lazy loading route
+  {path: "/about", name: 'AboutMe', component: () => import('@/views/AboutMe.vue')},  // lazy loading route
   {path: "/posts/:id", name:"displayPost", component:() => import('@/views/displayPost.vue')} // dynamic routing
 ]
 

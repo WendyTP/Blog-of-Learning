@@ -17,14 +17,16 @@
             </a>
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
               <li class="nav-item">
-                <router-link to="/"  @click="$emit('homeclick')" class="nav-link active" aria-current="page">Home</router-link>
+                <router-link to="/"  @click="$emit('homeclick')" class="nav-link" aria-current="page">Home</router-link>
               </li>
-              <li class="nav-item"><a href="#" class="nav-link text-white">About me</a></li>
               <li class="nav-item">
-                <router-link to="/newPost" class="nav-link text-white">Add Blog</router-link>
+                <router-link to="/about" class="nav-link ">About me</router-link>
               </li>
-              <li class="nav-item"><a href="#" class="nav-link text-white">Projects</a></li>
-              <li class="nav-item"><a href="#" class="nav-link text-white">Contact</a></li>
+              <li class="nav-item">
+                <router-link to="/newPost" class="nav-link ">Add Blog</router-link>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link ">Projects</a></li>
+              <li class="nav-item"><a href="#" class="nav-link ">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -36,7 +38,15 @@
     vertical-align: -.125em;
     fill: currentColor;
   }
-  .text-small {
+  .nav-link {
   font-size: 18px;
+  color: white;
 }
+
+  .nav-item .header-active-link {
+    color: #f3e121bd;
+    font-weight: bold;
+    
+  }
+
 </style>
