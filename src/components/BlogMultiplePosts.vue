@@ -8,56 +8,10 @@
       required: true
     }
   })
-
-  
-
-  const chosenPostToDisplay = ref({});
-  //const displayMultiplePosts = ref(true);
-
-  function hideMultiplePosts(singlePost) {
-    //displayMultiplePosts.value = false;
-    chosenPostToDisplay.value = singlePost;
-    let allPosts = document.querySelector("div.allPosts");
-    allPosts.hidden = true;
-  }
-
- 
-
-  function resetDisplaySetting() {
-    // how to display hidden allPosts and hide single post?
-    // where to use?
-    chosenPostToDisplay.value = {};
-     let allPosts = document.querySelector("div.allPosts");
-     let singlePostDiv = document.querySelector("div.singlePost");
-     //if (singlePostDiv) {singlePostDiv.hidden = true};
-     if (allPosts) {allPosts.hidden = false}
-     //displayMultiplePosts.value = true
-     //alert('resetting')
-  }
-
-  function displaySinglePost(divElement) {
-    //alert('single')
-    if (divElement) {
-      divElement.hidden = false;
-      let postsContainerDiv = document.querySelector("div.postsContainer");
-      postsContainerDiv.insertAdjacentElement("afterbegin", divElement);
-    }
-  
-  }
-
-  function displayAllPosts(divElement) {
-    let postsContainerDiv = document.querySelector("div.postsContainer");
-    if (postsContainerDiv) {
-      postsContainerDiv.replaceChildren();
-      postsContainerDiv.insertAdjacentElement("afterbegin", divElement);
-    }
-
-  }
-
 </script>
 <template>
   <div  class="postsContainer col-md-8">
-    <div :ref="displayAllPosts"  class="allPosts">
+    <div class="allPosts">
       <article class="blog-post">
         <h2 class="blog-post-title mb-1">Example blog post</h2>
         <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>

@@ -23,8 +23,8 @@
     <div class="row g-5 mb-4">
 
       <BlogMultiplePosts :postData="allPosts" />
-      
-      <BlogNavBar :postData="allPosts" @anchorclick="hideMultiplePosts"/>
+
+      <BlogNavBar :postData="allPosts" />
     </div>
   </div>
 
