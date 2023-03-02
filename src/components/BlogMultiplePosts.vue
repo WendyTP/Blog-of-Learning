@@ -9,10 +9,7 @@
     }
   })
 
-  const lastPost = ref(props.postData[6])
-
-
-
+  
 
   const chosenPostToDisplay = ref({});
   //const displayMultiplePosts = ref(true);
@@ -72,18 +69,6 @@
         </blockquote>
         <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
         <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
-
-      <article class="blog-post">
-        <h2 class="blog-post-title mb-1">{{lastPost.title}}</h2>
-        <p class="blog-post-meta">{{lastPost.publishedDate}} by <a href="#">{{lastPost.author}}</a></p>
-        <img src="{{lastPost.titleImage}}" alt="image of first post" class="img-fluid">
-
-        <p class="truncated">{{lastPost.content}}</p>
-        <p class=" mb-0">
-        <router-link @click.prevent="hideMultiplePosts(lastPost)" :to="lastPost.slug" class="fw-bold">Continue reading...</router-link>
-        </p>
-        <br/>
       </article>
 
       <article class="blog-post" v-for="post in props.postData" :key="post.id">
