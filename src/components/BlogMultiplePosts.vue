@@ -84,8 +84,6 @@
         <router-link @click.prevent="hideMultiplePosts(lastPost)" :to="lastPost.slug" class="fw-bold">Continue reading...</router-link>
         </p>
         <br/>
-
-       
       </article>
 
       <article class="blog-post" v-for="post in props.postData" :key="post.id">
@@ -94,9 +92,11 @@
         <img src="{{post.titleImage}}" alt="image of first post" class="img-fluid">
 
         <p class="truncated">{{post.content}}</p>
-        <p class=" mb-0">
-        <a @click.prevent="hideMultiplePosts(post)" href="#" class="fw-bold">Continue reading...</a>
-        </p>
+        <router-link
+          :to="{name: 'displayPost', params:{id: post.id}}"
+        >
+          <p class=" mb-0 fw-bold">Continue reading...</p>
+        </router-link>
         <br/>
       </article>
 
@@ -108,16 +108,6 @@
   </div>
 
 
-  
-
-
-  <template v-if="Object.keys(chosenPostToDisplay).length !== 0">
-    <div :ref="displaySinglePost" class="singlePost">
-      <BlogSinglePost  :chosenPost="chosenPostToDisplay" />
-    </div>
-  </template>
-
- 
 
  
 
