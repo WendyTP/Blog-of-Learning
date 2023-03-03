@@ -1,6 +1,9 @@
 <script setup>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+import {useRoute} from 'vue-router'
+
+const route = useRoute();
 
 
 
@@ -11,7 +14,7 @@ import Footer from '@/components/Footer.vue'
     <Header />
 
     <main>
-      <router-view></router-view>
+      <router-view :key="route.path"></router-view>
     </main>
 
     <Footer />
