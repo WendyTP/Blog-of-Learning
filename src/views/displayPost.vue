@@ -20,7 +20,7 @@
 </script>
 
 <template>
-  <h2> Hello posts {{route.params.id}}</h2>
+  
 
 
   <div>

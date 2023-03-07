@@ -19,7 +19,7 @@
                 <router-link to="/about" class="nav-link ">About me</router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/newPost" class="nav-link ">Add Blog</router-link>
+                <router-link to="/newPost" class="nav-link ">Add Post</router-link>
               </li>
               <li class="nav-item"><a href="#" class="nav-link ">Projects</a></li>
               <li class="nav-item"><a href="#" class="nav-link ">Contact</a></li>

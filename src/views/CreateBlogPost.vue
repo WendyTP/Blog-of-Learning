@@ -1,10 +1,28 @@
 <script setup>
   import {ref} from 'vue'
+  import {useRouter} from 'vue-router'
+
+  const router = useRouter()
 
   const contentText = ref('');
   const exampleDate = ref("2020-12-25");
   const authorText = ref('');
   const titleText = ref('');
+
+  function resetForm() {
+    document.querySelector('form').reset();
+  }
+
+  function cancelForm() {
+    // clear form input
+    // redirect to home page
+    
+    if (window.confirm("Do you want to clear the post and go back to Home page?")) {
+      resetForm();
+      router.push({name: "Home"})
+    }
+  }
+  
 </script>
 <template>
     <div class="container">
@@ -35,7 +53,7 @@
 
 
           <input class="w-50 btn btn-lg btn-primary " type="submit" value="submit">
-          <button class="w-50 btn btn-lg btn-secondary ">Cancel</button>
+          <button @click.prevent="cancelForm" class="cancelbtn w-50 btn btn-lg btn-secondary ">Cancel</button>
           
         </form>
       </div>
